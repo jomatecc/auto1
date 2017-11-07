@@ -1,0 +1,285 @@
+/*for navigation bars will  */
+
+
+header {
+		background-color: #1A237E; 
+        font-family: verdana; 
+}
+header a :link{
+	color: #fff; 
+}
+.atnav {
+  
+  background-color: #eee;
+  display: grid;
+  height: 30px;
+  width: 100%; 
+  border-bottom: 1px solid #eee; 
+  grid-template-columns: 150px 1fr 1fr 150px;
+}
+.atnav  div{
+	border: 1px #ccc solid; 
+	text-align: center; 
+	font-family:verdana;
+	color: #fff;
+	font-weight: bold; 
+	background-color: #000; 
+	
+    }
+	
+.atparag {/* for atcar paragraphs */
+    padding-left: 50px;
+    font-family: verdana;
+	font-size: 12px; 
+
+}	
+.atbutton1 {
+    background-color: #008CBA; /*blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+
+.form_labelstyle1  label {
+	
+	font-family: verdana;
+	font-size: 12px; 
+	font-weight: bold; 
+	
+}
+
+.position_box {
+	margin-left: 150px;
+
+	}
+	
+legend{
+	
+	font-family: verdana;
+	font-size: 14px; 
+	font-weight: bold; 
+	
+}
+/*----------------------------------------------*/  
+.atcontainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  font-family: verdana;
+
+    }
+
+.atresultset {
+border: 1px #ccc solid;
+width: 200px; 
+text-align: center; 
+background-color: #eee; 
+font-family: verdana; 
+
+   }
+
+.atresultset a { 
+	text-decoration: none; 
+  }
+
+/* layout for main listings */
+
+.atgridcontainer{
+	display: grid;
+    grid-column-gap: 1em;
+    grid-row-gap: .2em;
+	grid-template-areas: "logo make"
+						 "model color"
+						 "year  size";
+	border: 1px #4CAF50 solid; 
+						
+}
+/*/* above is for the main listing layouts  in grid */
+
+.atgridresultset {
+	
+	
+}
+
+/* for the detailed result page  */
+.outline{
+	border: 1px solid #4CAF50;
+	width: 400px; 
+	
+	background-color: #03A9F4;
+	
+}
+.atgridcontainerdetail{
+  margin-left: 10px; 
+  display: grid;
+  grid-template-columns:  180px 150px; 
+  grid-template-rows:  20px 20px 20px; 
+  
+  grid-column-gap: 1em;
+  grid-row-gap: .1em;
+  font-family: verdana;
+
+    }
+	
+.atgridcontainerdetail div{
+	
+ background-color: 	#64B5F6;   
+ border-bottom: .5px solid #0D47A1; 
+}
+/* Keep my focus till the end */
+.atcontainer2 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+
+.atresultset2 {
+flex-direction: column;
+border-left: 1px #000 solid;
+width: 150px; 
+text-align: center; 
+background-color: #ccc; 
+font-family: verdana; 
+
+}
+
+.result1 {
+
+  width: 150px;
+  text-align: center;
+  background-color: #eee;
+  opacity: .8;
+  font-family: verdana;
+
+}
+/* change the color of the body  */
+
+body {
+	background-color: #fff;/*#82B1FF*/;
+}
+/*for button  */
+
+.btn-group button {
+    background-color: #039BE5; /* Green background */
+    border-top: 1px solid #eee; /* Green border */
+	border-left: 0px solid #039BE5; 
+	border-right: 0px solid #039BE5; 
+	border-bottom: 1px solid #1A237E;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+	border-radius:0px;
+}
+
+
+
+/*layout for details */
+.detail_gridcontainer{
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr ; 
+	grid-template-rows:2fr;
+	font-family: verdana; 
+	font-size: 14px;
+	
+}
+.make_model {
+	font-family:verdana;
+	font-weight:bold; 
+	background-color: #eee; 
+	
+    grid-columns: 1/1;
+	grid-rows: 1/1;
+	
+}
+.descriptions{
+	background-color: #eee; 
+}
+
+.color {
+	background-color: #eee; 
+	
+}
+.year{
+	background-color: #eee; 
+
+}
+.engine{
+	background-color: #4FC3F7; 
+    font-weight:bold; 
+	
+}
+.body{
+	grid-columns: 2/3;
+    grid-rows: 1/2;
+	
+	
+    background-color: #eee; 
+}
+.price{
+	background-color: #eee; 
+	grid-rows: 1/3;
+
+}
+
+.showmembers {
+	display: inline-grid;
+	grid-template-columns: repeat(4, 200px) ;
+	/*grid-template-rows: ; */
+	grid-gap: 2px;
+}
+.showmembers div{
+	text-align: center;
+	font-family: verdana;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	color: #eee; 
+	background-color: #000;
+	
+	
+}
+
+.footer {
+	display: flex;
+	
+	border-radius: 8px;
+	height:120px; 
+	
+	background-color: #1A237E; 
+	margin-top: 600px;
+	padding-top: 20px;
+	margin-bottom: 5px; 
+	border: 1px solid #666;
+	
+}
+		
+.footer div{
+  margin-left: 30px; 
+  margin-top: 3px; 
+  font-family: verdana; 
+  font-size: 12px; 
+  
+}	
+
+.footer div a {
+	
+	text-decoration: none; 
+}
+		
+.footer div a:link {
+	color: #eee;
+	
+}
+				
+		
+

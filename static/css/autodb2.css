@@ -1,0 +1,148 @@
+/*
+html, body{
+height: 100%;
+  }
+#wrap 
+  {
+  min-height: 100%;
+  }
+
+#main{
+overflow: auto; 
+padding-bottom: 150px; 
+
+     }
+
+.footer{
+position: relative; 
+margin-top: -150px; // negative value of footer height
+height: 150px; 
+clear: both;
+padding-top: 20px;
+}
+*/
+
+.autodb-v-list{
+    padding-top: 70px;
+    list-style: none; 
+}
+.page-footer{
+background-color: #3E4551;
+color: #fff; 
+border: 1px solid #000;
+}
+.page-footer a{
+ color: #fff; 
+ 
+}
+.page-footer social-contacts{
+  display:grid; 
+  grid-template-columns: repeat(4,30px);
+  
+
+}
+.social-contacts ul{
+  list-style: none;
+}
+
+.autodbcontainer{
+  display: grid;
+  grid-template-columns: 200px min-max(140, 200)px; 
+  grid-gap: 10px;
+  
+  }
+.autodb-grid-main{
+    display: grid;
+    grid-template-columns: 10% auto 100px; 
+    justify-items: center; 
+}
+.autodb-grid-container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 200px 200px; 
+    margin: 5px;
+    border-top: 1px solid #ccc; 
+}
+
+.autodb-grid-container div{
+    padding-left: 10px; 
+    padding-bottom: 0px;
+    margin: 5px;
+     
+}   
+.autodb-grid-col-left{
+  border-top: 1px solid #000;
+
+}
+
+.price{
+    font-weight: 400; 
+    color:darkslateblue;
+}
+
+
+/*custom */
+.stylish-color-dark{
+    background-color: #607D8B;
+    border-top: 1px solid #009688;
+}
+.stylish-color-dark2{
+    background-color: #607D8B;
+}
+.autodb-text-color1{
+    color: #FFA000;
+}
+/* from bootply page css*/
+
+body {
+ padding-top:50px;
+}
+
+#masthead { 
+ min-height:250px;
+}
+
+#masthead h1 {
+ font-size: 30px;
+ line-height: 1;
+ padding-top:20px;
+}
+
+#masthead .well {
+ margin-top:8%;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 50px;
+  }
+}
+
+.navbar-bright {
+ background-color:#111155;
+ color:#fff;
+}
+
+.affix-top,.affix{
+ position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+  	margin-top:30px;
+  	width:228px;
+  }
+  
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#sidebar li.active {
+  border:0 #eee solid;
+  border-right-width:5px;
+}
+
