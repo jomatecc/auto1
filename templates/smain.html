@@ -1,0 +1,304 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic/semantic.min.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js" rel="javascript" ></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                                                            crossorigin="anonymous"></script>
+    <script src="{% static 'semantic/semantic.min.js' %}"></script>
+      <!-- Bootstrap CSS -->
+    
+      <!-- Example  CSS -->
+  <style>
+  body {
+    padding: 1em;
+  }
+  .ui.menu {
+    margin: 3em 0em;
+  }
+  .ui.menu:last-child {
+    margin-bottom: 110px;
+  }
+      .side-nav{
+       list-style: none;   
+      }
+      ul{
+    list-style: none; 
+      }
+      .addform {
+          width: 550px; 
+          border: 1px solid #ccc;
+          padding: 50px; 
+      }
+      
+    
+select#nmake{
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+  // background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+
+  </style>
+
+  <!--- Example Javascript -->
+  
+</script>
+  </head>
+  <body>
+  
+  <div class="ui inverted menu">
+  <div class="header item">Atcar</div>
+  <div class="active item">Sell</div>
+  <a class="item">Buy</a>
+  <div class="ui dropdown item">
+    Semantic UI
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <div class="item">Action</div>
+      <div class="item">Another Action</div>
+      <div class="item">Something else here</div>
+      <div class="divider"></div>
+      <div class="item">Separated Link</div>
+      <div class="divider"></div>
+      <div class="item">One more separated link</div>
+    </div>
+  </div>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui transparent inverted icon input">
+        <i class="search icon"></i><select id="nmake" >
+          
+        </select>
+        </div>  
+      <div>
+        <select id="carlist">
+         <option>-----------------</option>  
+        </select>
+        <select id="modellist">
+         
+        </select>
+        <!--- Hide search input 
+        <input type="text" class="ui.search" id="carsearch" placeholder="Search">
+         -------> 
+      </div>
+    </div>
+    <a class="item"><i class="user circle">Login</i></a>
+  </div>
+</div>
+  
+   <div class="ui fluid three item menu">
+  <a class="item">Buy</a>
+  <a class="item">Sell</a>
+  <a class="item">Rent</a>
+</div> 
+<!--
+  <label for="carsearch">car</label>
+  
+  <div class="ui inverted menu">
+  <a class="active item">
+    Home
+  </a>
+  <a class="item">
+    Messages
+  </a>
+  <a class="item">
+    Friends
+  </a>
+  <div class="right menu">
+            <a class="ui item">
+              Logout
+            </a>
+          </div>
+</div>
+  
+
+<div class="ui inverted menu">
+  <div class="header item">
+    Atcar
+  </div>
+  <a class="item">
+    About Us
+  </a>
+  <a class="item">
+    Jobs
+  </a>
+  <a class="item">
+    Locations
+  </a>
+  
+  <div class="right menu">
+            <a class="ui item">
+              Logout
+            </a>
+          </div>
+</div>
+
+      <div class="ui secondary pointing menu">
+          <a class="active item">
+            Home
+          </a>
+          <a class="item">
+            Messages
+          </a>
+          <a class="item">
+            Friends
+          </a>
+          <div class="right menu">
+            <a class="ui item">
+              Logout
+            </a>
+          </div>
+        </div>
+        <div class="ui segment">
+          <p></p>
+        </div>
+-->
+
+<!--- nav bar 2 
+<div class="ui secondary  menu">
+  <a class="item">
+    Atcar
+  </a>
+  <a class="item active">
+    SELL
+  </a>
+  <a class="item">
+    BUY
+  </a>
+  <a class="item">
+   RENT
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <a class="ui item">
+      Logout
+    </a>
+  </div>
+</div>
+
+---->
+
+     <!-------Main  rows  ----------->
+     <!-- semantic grid system --->
+     <div class="stackable grid container">
+           <div class="ui divided grid">
+            <div class="columns three wide column">
+                
+                left side
+ <ul class="side-nav">
+  <li><a href="#">Find a mechanic</a></li>
+  <li><a href="#">Find Parts</a></li>
+  <li><a href="#">Auto Accesories</a></li>
+  <li><a href="#">Link 4</a></li>
+</ul>
+           </div>
+          <div class="columns eleven wide column"> 
+     {% block content_base %}
+
+       
+       
+       
+        {% endblock %}
+        <br />
+        <br />
+        <br />
+        <br />
+         <br />
+        <br />
+        <br />
+        <br />
+        
+        </div>
+       
+            <div class="columns two wide column">right side</div>
+          </div>
+     </div>
+     
+     
+  <!------- paginator -------->    
+    <div  class="container">
+      <div class="ui centered grid">
+         
+         <div class="columns four wide centered column"></div>
+        <div class="columns eight wide centered column">
+         <br /><br />
+         <br /><br />
+         {% block content_paginators %}
+
+
+         {% endblock %}  
+		</div>
+          <div class="columns four wide centered column"></div>
+	  </div>
+    </div>
+ <div class="container">
+      
+     <hr width=600>
+     
+      
+         <br />
+        <br />
+        <br />
+        <br />
+      </div>
+ <!---------------- Footer -------------->
+ 
+   <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us</a>
+            <a href="#" class="item">Terms of Usage</a>
+            <a href="#" class="item">Site Policies</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Become a Seller</a>
+            <a href="#" class="item">FAQ</a>
+            <a href="#" class="item">Mobile App</a>
+            <a href="#" class="item">Contact# 876-8327004</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script  src="{%static 'js/autos.js' %}"></script>
+        <script src="{% static 'vue/testapp.js' %}" ></script>
+    </body>
+    </html>

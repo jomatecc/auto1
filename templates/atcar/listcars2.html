@@ -1,0 +1,123 @@
+
+{% extends "smain.html"%}
+{% load staticfiles %}
+
+    <h4>Believe 99% of the world won't have confidence in me</h4>
+</br>I  have al the confidence in myself</br>
+
+<!--
+ <div class="wrapper">
+     for carsw in carlist 
+     <div class="row">
+-->
+
+{% block content_base %}
+	<!-- semantic ui -->
+	<div id="testapp" class="ui divided grid stackable container">	
+ 
+{% for carsw in cars %}
+ 
+ 
+	
+	<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <img src="/media/cars/{{carsw.id}}.jpg">
+    </div>
+    <div class="content">
+      <a class="header">{{carsw.year|capfirst}} {{carsw.make|capfirst}}  {{carsw.model|capfirst}}</a>
+      <div class="meta">
+        <span>Description</span>
+      </div>
+      <div class="description">
+        <p> Color: {{carsw.color|capfirst}}<br />  Engine:{{carsw.engineSizecc|capfirst}} cc </p>
+        <p> $[[changeout({{carsw.price}}) ]] [[postfix]]</p>
+      </div>
+      <div class="extra">
+       <a href="details.html?id=someid"> Details. </a>
+      </div>
+    </div>
+   
+  </div>
+  
+</div>
+	
+		{% endfor %}
+	
+  </div>
+  
+{%endblock%}
+
+
+
+{% block content_paginators %}
+
+
+<div class="ui inverted pagination menu">
+<!--    <span class="step-links"> -->
+        {% if cars.has_previous %}
+            <a class="item" href="?page={{ cars.previous_page_number }}">Prev</a>
+        {% endif %}
+    
+    {% for page1 in cars.paginator.page_range %}
+    
+    {% if cars.number == page1 %}
+        <a class="item active">
+            {{ cars.number }} 
+         </a> 
+      
+    {% else %}
+      <a class="item" href="?page={{page1}}">{{page1}}</a>
+    {% endif %}
+    {% endfor %}
+  
+        {% if cars.has_next %}
+            <a class="item" href="?page={{ cars.next_page_number }}">Next</a>
+        {% endif %}
+    
+    
+</div>
+ 
+
+<!-- Original semantic paginator 
+
+<div class="ui inverted pagination menu">
+  <a class="active item">
+    1
+  </a>
+  <div class="disabled item">
+   2
+  </div>
+  <a class="item">
+    3
+  </a>
+  <a class="item">
+    4
+  </a>
+  <a class="item">
+    5
+  </a>
+   <a class="item">
+    6
+  </a>
+   <a class="item">
+    7
+  </a>
+   <a class="item">
+    8
+  </a>
+   <a class="item">
+    9
+  </a>
+   <a class="item">
+    10
+  </a>
+</div> -->
+{% endblock %}
+
+{% block content_links %}
+
+
+
+
+{% endblock %}

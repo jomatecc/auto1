@@ -1,0 +1,18 @@
+{% extends "smain.html"%}
+{% load staticfiles %}
+
+
+
+
+
+{% block content_base %}
+<div class="addform">
+<form class="ui form">
+<ul>
+{{ form.as_ul}}
+</ul>
+    
+<button type="submit" >Submit</button>    
+</form>    
+</div>
+{% endblock %}

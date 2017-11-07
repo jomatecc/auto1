@@ -1,0 +1,41 @@
+
+{% extends "main2.html"%}
+{% load staticfiles %}
+{% load humanize %}
+    <h4>Believe 99% of the world won't have confidence in me</h4>
+</br>I  have al the confidence in myself</br>
+
+{% block content_base %}
+<div class="atflexwrapper">
+     {% for carsw in cars %}
+     <div class="row">
+		<div class="atflexwrapper_carinfo">
+		    <div>
+               <h4> <a href="#">{{carsw.year|capfirst}} {{carsw.make|capfirst}}  {{carsw.model|capfirst}}</a></h4>
+			 </div> 
+			 
+			<div>
+            <a href="{% url 'detail3' id=carsw.id %}"><img class="card-img-top" width=240 src="/static/img/{{ carsw.sellersID }}/front.jpg"></a>
+			</div>
+            
+			<div>
+            Color: {{carsw.color|capfirst}}<br />
+             </div>
+			 
+			<div>
+                Engine:{{carsw.engineSizecc|capfirst}} cc
+                Price: <b>${{carsw.price|intword}}</b>
+			</div>
+		</div>
+             
+     </div>
+     {% endfor %}
+ </div>
+{% endblock %}
+
+{% block content_links %}
+
+
+{% endblock %}
+
+

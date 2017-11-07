@@ -1,0 +1,60 @@
+
+{% extends "main2.html" %}
+
+
+
+<!-- for debugging to check if request.user.is_authenticated is working -->
+
+{% block content_base %}
+<p class="atparag">
+{% if request.user.is_authenticated %}
+   Status: You are already Logged in as {{user.username}}
+   
+   {% else %}
+   
+  Status: Logged out
+
+<div class="position_box">
+{% if form.errors %}
+<p class="atparag">Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+   </div>
+<form method="post" action="{% url 'login' %}">
+<fieldset>
+<legend>LOGIN</legend>
+{% csrf_token %}
+<table>
+<tr>
+    <td class="form_labelstyle1">{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td class="form_labelstyle1">{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+<br />
+<input id="loginform"  onclick="disableform({{ request.user.is_authenticated }})" class="atbutton1" type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</fieldset>
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p class="atparag"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+
+ {% endif %}
+ 
+ 
+ 
+{% endblock %}

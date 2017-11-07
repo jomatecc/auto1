@@ -1,0 +1,300 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Atcars listings</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/atcss1.css' %}">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="{% static 'js/dropzone.js' %}"></script>
+ <script src="{% static 'js/superbox.js' %}"></script>
+
+ <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 600px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+	  color : #fff;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+	 body{
+	  background-image: url(/static/img/sys/fineauto.jpg):
+	  }
+	  .ntop{
+	  height: 100px;
+	  width: 100%;
+    }
+  </style>
+</head>
+
+<body padding-top="100">
+<div class="ntop" ></div>
+
+
+<!--                          original nav starts here ------->
+
+<nav class="navbar  navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" 
+		data-toggle="collapse"
+		data-target="#bs-example-navbar-collapse-1" 
+		aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AtCars</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'listcars' %}/1">BUY <span class="sr-only changefont">(current)</span></a></li>
+        <li><a  href="#atcar_rent_modal" data-toggle="modal">RENT</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+					role="button" aria-haspopup="true" aria-expanded="false">
+					SEARCH BY<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'listmake' make='honda'  %}">HONDA</a></li>
+            <li><a href="{% url 'listmake' make='toyota' %}">TOYOTA</a></li>
+            <li><a href="{% url 'listmake' make='nissan' %}">NISSAN</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">SUZUKI</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{% url 'listcars' %}">HYUNDAI</a></li>
+			<li><a href="{% url 'listcars' %}">MAZDA</a></li>
+			<li><a href="{% url 'listcars' %}">FORD</a></li>
+          </ul>
+        </li>
+		
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control input-md" placeholder="Search eg. Honda civic">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'listcars'  %}">SELL</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		 {% if user.is_authenticated %}
+		     {{user.username}}
+			{% else %}
+			SIGN UP LOG IN
+			{% endif %}
+		  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+			<li><a href="">Change Password</a></li>
+            <li><a href="#">ADD A CAR</a></li>
+			<li>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{user.id}}">
+                    <button type="submit">ACCOUNT</button>
+                </form>
+
+                <a href="">ACCOUNT</a></li>
+            <li role="separator" class="divider"></li>
+            <li>
+			{% if user.is_authenticated %}
+		     <a href="">LOGOUT</a>
+			{% else %}
+			<a href="">LOGIN</a>
+			{% endif %}
+
+
+			</li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<!---------------navbar -ends<div padding="70"> br />------------->
+   <div><br/>
+  <br />
+  <br />
+
+
+  </div>
+
+  <div>
+  <ol class="breadcrumb breadcrumb-inverse">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+</div>
+
+
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">FIND A DEALER</a></p>
+      <p><a href="#">BECOME A DEALER</a></p>
+      <p><a href="#">FIND A MECHANIC</a></p>
+	  <p><a href="#">FIND PARTS</a></p>
+    </div>
+<!--------------Center stage  ------------------>
+
+	<div class="col-sm-8 text-left">
+	<br />
+	<!-----------------------------modal ------->
+	<div class="modal fade bd-example-modal-lg" id="atcar_rent_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+
+ <div class="do-modal">
+
+
+	<a href="honda"> Honda</a>&nbsp;&nbsp;
+	<a href="toyota"> Toyota</a>&nbsp;&nbsp;
+	<a href="nissan"> Nissan</a>&nbsp;&nbsp;
+	<a href="Mitsubishi"> Mitsubishi</a>&nbsp;&nbsp;
+	<a href="">Mazda<a/>&nbsp;&nbsp;
+	<a href="">Hyundai<a/>&nbsp;&nbsp;
+	<a href="">Suzuki<a/>&nbsp;&nbsp;
+	<a href="">Ford<a/>&nbsp;&nbsp;
+	<a href="">Chevrolet<a/>&nbsp;&nbsp;
+	<a href="">Dodge<a/>&nbsp;&nbsp;
+	<a href="">Lada<a/>&nbsp;&nbsp;
+	<a href="">Citroen<a/>&nbsp;&nbsp;
+	<a href="">Subaru<a/>&nbsp;&nbsp;
+	<a href="">Daewoo<a/>&nbsp;&nbsp;
+	<a href="">Kia <a/>&nbsp;&nbsp;
+</a>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</div>
+
+   {% for i in atlist.MAKE_LIST %}
+
+
+   nigel is king
+   {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!--------modal end --->
+<div>
+	{% block content_base2 %}
+
+
+
+	{% endblock %}
+</div>
+	<div >
+
+
+
+      {% block content_base %}
+
+
+
+
+
+	  {% endblock %}
+    </div>
+
+   </div>
+
+
+
+	<!---- SIDE NAV RIGHT ---->
+
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block content_links %}
+
+
+
+
+
+
+{% endblock %}
+
+<!---------------------------------page Navigation -------->
+<div class="footerclass">
+<footer class="container-fluid text-center">
+<div class="row">
+<div class="col-sm-4">
+
+  </div>
+
+  <div class="col-sm-4">
+  <div class="fb-follow" data-href="https://www.facebook.com/nthompson876" data-width="50px" data-height="25"
+  data-layout="standard" data-size="small" data-show-faces="true"></div>
+  </div>
+  <div class="col-sm-4">
+  <div><a href="#">Contact Us</a></div>
+  <div><a href="#">Terms of Service</a></div>
+  <div><a href="">Privacy Policy</a></div>
+  <p><br /></p>
+ </div>
+
+ <div class="row">
+
+ <div class="col-sm-3">&copy Atcars.com all rights reserved.</div>
+ <div class="col-sm-3"></div>
+ <div class="col-sm-3"></div>
+ </div>
+</footer>
+</div>
+</body>
+</html>

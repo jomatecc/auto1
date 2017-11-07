@@ -1,0 +1,61 @@
+
+{% extends "fmain.html"%}
+{% load staticfiles %}
+
+ <!--
+ <div class="wrapper">
+     for carsw in carlist 
+     <div class="row">
+ -->
+
+{% block content_base %}
+
+<div id="testapp  class="grid-x grid-padding-x">
+ {% for carsw in cars %}
+  <ul >
+<li> <a href="#">{{carsw.year|capfirst}} {{carsw.make|capfirst}}  {{carsw.model|capfirst}}</a>  </li>
+<li>Color:{{carsw.color|capfirst}} </li>
+<li>Engine CC: {{carsw.engineSizecc|capfirst}} </li>
+<li><p width="220"> $ ..[[changeout({{carsw.price}}) ]] [[postfix]]</p></li>
+
+   </ul>
+  {% endfor %} 
+</div>
+	<!-- semantic ui -->
+  </div>
+{%endblock%}
+</div>
+<div> add somthing else here</div>
+{% block content_links %}
+
+
+<div align="center" id="testapp">
+<nav aria-label="Page navigation">
+  <ul class="pagination pagination-lg">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+
+	{% for npage in pages %}
+ 
+   {% if npage == currpage %}
+   <li class="page-item active"><a href="{% url 'listcars' %}/{{npage}}">{{npage}}</a></li>
+   
+   {% else %}
+
+  <li class="page-item"><a href="{% url 'listcars'  %}/{{npage}}">{{npage}}</a></li>
+ {% endif %} 
+ 
+     {% endfor %}
+
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+{% endblock %}

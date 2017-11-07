@@ -1,0 +1,64 @@
+{% extends "main2.html" %}
+{%load staticfiles%}
+{% load humanize %}
+
+
+{% block content_base %}
+
+
+
+<div class="container">
+
+<div class="col-md-6"><img width=540 src="/media/{{car.id}}.jpg" />
+  <br />
+  <script>
+  $(function() {
+    $('.superbox').SuperBox();
+  });
+  </script>
+  <div class="superbox-list">
+    <img src="/media/thumbs/{{car.id}}.jpg" data-img="/media/{{car.id}}.jpg" alt="" class="superbox-img">
+  </div>
+</div>
+
+  <div class="col-md-6">
+  <table width=350 cellpadding=10 class="at_detail_table">
+
+    <tr><td>Price</td><td><b>$<div id="price">{{car.price}}</div></b></td></tr>
+
+    <tr><td>MAKE</td><td>{{car.make}}</td></tr>
+    <tr><td>COLOR</td><td>{{car.color}}</td></tr>
+    <tr><td>Mileage</td><td>{{car.mileagkm}}</td></tr>
+    <tr><td>Sterring Orientation</td><td>{{car.steer}}</td></tr>
+    <tr><td>Transmission</td><td>{{car.transmission}}</td></tr>
+    <tr><td>Body</td><td>{{car.body}}</td></tr>
+    <tr><td>Engine</td><td>{{car.enginesize}} {{car.enginetype}}</td></tr>
+    <tr><td>Fuel Type</td><td>{{car.fuel}}</td></tr>
+    <tr><td>Location</td><td>{{car.location_parish}}</td></tr>
+    <tr><td>label</td><td>{{car.address}}</td></tr>
+    <tr><td>Interior</td><td>{{car.interior}}</td></tr>
+    <tr><td>Doors</td><td>{{car.doors}}</td></tr>
+    </table>
+
+
+  </div>
+
+</div>
+<!--
+<script>
+ let nval = document.getElementById('price');
+  tomill(){
+
+  nval = document.getElementById('price');
+  let intval = parseInt(nval.text)
+  if (intval > 1000000){
+   nval.value = intval/1000000;
+    }
+
+  }
+
+document.addEventListener("DOMContentLoaded",   tomill);
+
+</script>
+-->
+  {% endblock %}

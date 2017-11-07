@@ -1,0 +1,18 @@
+
+
+<div id="testapp" class="">	
+    <div class="grid-x grid-padding-x">
+	
+           {% for carsw in cars %}
+ 
+ 
+    <div   class="cell small-3 ">
+            <div> <a href=""><img  width=220 src="/media/{{carsw.id}}.jpg"></a></div>
+            <div><a href="#">{{carsw.year|capfirst}} {{carsw.make|capfirst}}  {{carsw.model|capfirst}}</a></div>    
+            <div> Color: {{carsw.color|capfirst}}</div>
+            <div>Engine:{{carsw.engineSizecc|capfirst}} cc </div>   
+            <div><p width="220"> $ ..[[changeout({{carsw.price}}) ]] [[postfix]]</p> </div>          
+                
+	</div>
+	
+</div>	

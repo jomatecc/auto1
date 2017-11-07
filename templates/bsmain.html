@@ -1,0 +1,232 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js" rel="javascript" ></script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+
+    <link rel="stylesheet" href="{% static 'css/autodb2.css' %}">
+</head>
+  <body>
+    
+    <div>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">Autodb</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">SELL  <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">RENT</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Buy</a>
+                        </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
+                  </nav>    
+</div>
+
+
+<div class="autodb-grid-main">
+    <!--    <div class="row justify-content-md-center"> -->
+        
+         <div class="autodb-grid-col-left">
+         
+         <ul class="autodb-v-list">
+             
+            <li>Find a Mechanic</li>
+            <li>Become an affiliate</li>
+            <li>lnk3</li>
+            <li>lnk4</li>
+            <li>lnk5</li>
+            <li>lnk6</li>
+             
+             </ul>
+         
+            1 of 3 
+         
+         
+          </div>
+ <!-----         <div class="col-md-auto">-->
+          <div class="autodb-grid-col">
+                <h6>Bootstrap V4! test test test test teste teste3 test test test test teste teste3</h6>
+                
+                
+               {% block content_base %}
+
+               {% endblock %}
+               
+               
+          </div>
+          <div class="autodb-grid-col">
+          
+          3 of 3 
+          
+          </div>
+    
+ </div>
+      
+     
+
+<hr width=800>
+<br />
+<br />
+<br />
+<br />
+<div class="container-fluid">
+<div class="row">
+    <div class="col">
+<!--left side -->
+</div>
+<div class="col">
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Prev</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+    <div class="col">
+
+<!-- right side -->
+     </div>
+   </div>
+</div>
+<!--pagenav end -->
+<hr width=700 >
+
+<br />
+<br />
+               
+<!--Footer-->
+<footer class="page-footer center stylish-color-dark">
+
+    <!--Footer Links-->
+    <div class="container">
+
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
+
+            <!--First column-->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="title mb-3 font-bold">Autodb.com</h6>
+                <p>Get more info on how this site works by using the showme addHere you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <!--/.First column-->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!--Second column-->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="title mb-4 font-bold">Service</h6>
+                <p><a href="#!">Autodb.com</a></p>
+                <p><a href="#!">Terms of Usage</a></p>
+                <p><a href="#!">Privacy policies</a></p>
+                <p><a href="#!">About us</a></p>
+            </div>
+            <!--/.Second column-->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!--Third column-->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="title mb-4 font-bold">Useful links</h6>
+                <p><a href="#!">Your Account</a></p>
+                <p><a href="#!">Become an Affiliate</a></p>
+                <p><a href="#!">Prices</a></p>
+                <p><a href="#!">FAQ</a></p>
+            </div>
+            <!--/.Third column-->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!--Fourth column-->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="title mb-4 font-bold">Contact</h6>
+                <p><i class="fa fa-home mr-3"></i> Portmore, Jamaica</p>
+                <p><i class="fa fa-envelope mr-3"></i> info@autodb.com</p>
+                <p><i class="fa fa-phone mr-3"></i> 1 8768327004</p>
+                <p><i class="fa fa-print mr-3"></i> 1 2345678900</p>
+            </div>
+            <!--/.Fourth column-->
+
+        </div>
+        <!-- Footer links -->
+
+        <hr>
+
+        <div class="row py-3 d-flex align-items-center">
+
+            <!--Grid column-->
+            <div class="col-md-8 col-lg-9">
+
+                <!--Copyright-->
+                <p class="text-center text-md-left grey-text"> &copy 2017 Copyright: <a href="https://www.autodb.com"><strong class="autodb-text-color1"> Autodb.com</strong></a></p>
+                <!--/.Copyright-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 col-lg-3 ml-lg-0">
+
+                <!--Social buttons-->
+               <!-- <div class="social-section text-center text-md-left"> -->
+               <div class="social-contacts">
+                   <ul class="row">
+                        <li><a class="btn-floating btn-sm rgba-white-slight mr-xl-4"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="btn-floating btn-sm rgba-white-slight mr-xl-4"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="btn-floating btn-sm rgba-white-slight mr-xl-4"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a class="btn-floating btn-sm rgba-white-slight mr-xl-4"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                   
+                </div>
+                <!--/.Social buttons-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!--/.Footer-->
+                
+        
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  </body>
+</html>

@@ -1,0 +1,84 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+	<link href="{% static  "css/bs.css" %}" rel="stylesheet">
+	<link href="{% static "css/atcar.css" %}" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <title>{% block title %}Be better {% endblock %}</title>
+  </head>
+  <body>
+	
+	<div class=row">
+	
+    <header>
+	<div class="topnav">
+      <div><a href="{% url 'login' %}">Login</a></div>
+	  <div><a href="{% url 'addcars' %}">Sell a car</a></div>
+      <div><a href="{% url 'signup' %}">Signup</a></div> 
+	  <div><a href="{% url 'logout' %}">Logout</a></div> 
+    </div>
+
+    </header>
+	</div>
+	
+	
+<div class="rownav"> 
+<ul class="topflex2">
+  <li > <span class="logo"><a href="{% url 'nfinder' %}">VIPauto</a></span></li>
+  
+  <li><a href="">Buy a Car </a></li>
+  <li><a href="{% url 'addcars' %}">Sell a Car</a></li>
+  <li><a href="#">Rent or Trade</a></li>
+  <li><a href="#">Find a Dealer</a></li>
+  <li><a href="#"></a></li>
+</ul>
+  
+</div>
+   <div class="atnav"> change habits, do more dont think about doing just do and do more</div>
+   
+   
+    <div> </br></div>
+	
+      {% block content_base %}
+	  
+	  
+      {% endblock %}
+     
+    <main>
+
+	
+	
+    </main>
+	
+<div class="footer">
+<div>
+<div><a href="about.html">About atcars</a></div>
+<div><a href="contact.html">Contact atcars  </a>  </div>
+<div><a href="termsofuse.html">Terms of usage </a> </div>
+
+</div>
+
+<div>
+<div><a href="sitemap.html">Site map </a></div>
+<div><a href="mobileapp.html">Mobile apps</a> </div>
+<div><a href="siteusage.html">How to use this site </a></div>
+
+</div>
+
+
+<div></div>
+</div>
+<div class="atparag">
+<span id="copyrightyear"> &copy 2017</span>
+<span> Atcars.com all rights reserved. </span>
+</div>
+  </body>
+</html>
